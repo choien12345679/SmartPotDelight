@@ -1,8 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import startScreen from './src/Screen/startScreen';
+import mainScreen from './src/Screen/mainScreen';
+
 
 export default function App() {
+  const Stack = createStackNavigator();
   const [value, setValue] = useState('안녕');
   const getRepotNo = async () => {
     try {
@@ -37,10 +44,19 @@ export default function App() {
   }, [])
   
   return (
-    <View style={styles.container}>
-      <Text>{value}</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="startScreen">
+        <Stack.Screen
+          name="startScreen" 
+          component={startScreen}
+          options={{headerShown: false}} /> 
+        <Stack.Screen 
+          name="mainScreen" 
+          component={mainScreen}
+          options={{headerShown: false}} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    
   );
 }
 
