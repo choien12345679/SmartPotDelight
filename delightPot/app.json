@@ -21,8 +21,14 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "fonts": {
+      "BMJUA": "./assets/fonts/BMJUA.ttf"
+    },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
