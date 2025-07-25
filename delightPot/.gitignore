@@ -38,6 +38,8 @@ from typing import Optional
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# 네트워크 IP 관련
+/Config
 
 app = FastAPI()
 
